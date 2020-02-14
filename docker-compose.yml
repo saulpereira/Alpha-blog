@@ -5,5 +5,14 @@ services:
         build: .
         ports:
             -   "3000:3000"
+        environment: 
+            -   BUNDLE_PATH=/bundle
+            -   SPROCKETS_CACHE=/cache
         volumes:
             -   .:/usr/src
+            -   bundle:/bundle
+            -   cache:/cache
+
+volumes:
+    bundle:
+    cache:
